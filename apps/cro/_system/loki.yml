@@ -134,7 +134,7 @@ spec:
               memory: 400Mi
           persistence:
             size: 3Gi
-            storageClass: do-block-storage
+            storageClass: longhorn
 
         read:
           replicas: 1
@@ -147,7 +147,7 @@ spec:
               memory: 800Mi
           persistence:
             size: 3Gi
-            storageClass: do-block-storage
+            storageClass: longhorn
 
         write:
           replicas: 1
@@ -160,7 +160,7 @@ spec:
               memory: 800Mi
           persistence:
             size: 5Gi
-            storageClass: do-block-storage
+            storageClass: longhorn
 
         gateway:
           replicas: 1
