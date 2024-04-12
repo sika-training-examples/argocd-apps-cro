@@ -22,3 +22,4 @@ spec:
     helm:
       valuesObject:
         host: cro-php-example.cro.sikademo.com
+        replicas: 1
