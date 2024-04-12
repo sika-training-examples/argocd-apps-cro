@@ -3,6 +3,16 @@ kind: Application
 metadata:
   name: cro-php-example
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: 1=ghcr.io/sika-training-examples/cro-php-example:php,2=ghcr.io/sika-training-examples/cro-php-example:nginx
+    argocd-image-updater.argoproj.io/1.helm.image-spec: phpImage
+    argocd-image-updater.argoproj.io/1.update-strategy: digest
+    argocd-image-updater.argoproj.io/1.force-update: 'true'
+    argocd-image-updater.argoproj.io/1.platforms: linux/amd64
+    argocd-image-updater.argoproj.io/2.helm.image-spec: nginxImage
+    argocd-image-updater.argoproj.io/2.update-strategy: digest
+    argocd-image-updater.argoproj.io/2.force-update: 'true'
+    argocd-image-updater.argoproj.io/2.platforms: linux/amd64
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
